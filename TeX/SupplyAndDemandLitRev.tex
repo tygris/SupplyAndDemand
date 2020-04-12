@@ -1,0 +1,73 @@
+\documentclass{article}
+
+\title{Supply and Demand as a Dynamical System}
+\author{Natalie Wellen}
+\date{\today}
+
+\input{preamble.tex}
+
+
+\begin{document}
+
+\maketitle
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Critiques}
+\begin{enumerate}
+	\item Does not account for high inflation and involuntary unemployment at the same time \cite{mankiw_quick_1990}
+	\item Does it really need to satisfy Walras' Law? Keynes said that Walras' (like Say's) Law is incompatible with Keynesian economics \cite{clower_keynesian_1984}. Clower then suggests the use of Say's Principle instead.
+	\item Does it account for how trade is organized? \cite{clower_coordination_1984}\\
+	Of course another part of this problem would be that the study of how production, consumption, and trading activities are performed by agents and organized in the economy was missing at the time of that writing. So question: Does it exist now? ``Complex Economics'' by Alan Kirman would suggest not by my recollection. 
+	\item Do the underlying mechanisms match empirical observations? i.e. Assuming sticky wages $\Rightarrow$ counter-cyclical wages, but this is not observed. \cite{mankiw_quick_1990}
+	\item Just in general these systems are not practical enough, aka there is no way to predict what is happening with the economy\cite{mankiw_quick_1990}
+	\item Theory discusses equilibrium and other states of the system, but not how the equilibrium is reached \cite{smale_dynamics_1976}
+\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Previously Suggested Fixes}\label{fixes}
+\begin{enumerate}
+	\item Use stock-flow models to analyze disequilibrium states of supply and demand\cite{clower_keynesian_1984}.
+	\item Market excess demands should not be assumed independent of current market transactions, so that income may be treated as an independent variable \cite{clower_keynesian_1984}.
+	\item Instead Use dual decision theory which causes market excess demand functions to depend on the current market transactions rather than always assuming equilibrium prices \cite{clower_keynesian_1984}
+	\item 1990 Ball and Romer depart from Walrasian assumptions to explain wage and price stickiness \cite{ball_real_1990}
+	\item There is a major difference between perishable and non-perishable markets, so use this \cite{smale_dynamics_1976}
+\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Relevant Papers}
+What really opened up this can of worms was a pair of 1976 papers by Smale \cite{smale_exchange_1976, smale_dynamics_1976}. The first is a mathematical paper that analyzed supply and demand using cone fields and differential inequalities. Since that is all that I can understand, perhaps it is not surprising that the economic papers published after 1976 along this line of reasoning seem to follow the second paper. That paper was written to a general audience, and meant to communicate Smale's critiques for the economic theory as then presented, and explain the results that he achieved in the other mathematical paper to non-mathematicians. It goes through not only how dynamics need to be considered more in economic systems, but also argues for the return to calculus in modeling economics instead of the use of fixed points and long-term optimization. 
+
+There are three papers that I found during the lit review that I view as the most relevant to our research project. 
+
+First, following part of Smale's advice ``Keynes and the Classics: A Dynamical Perspective'' by Robert W. Clower \cite{clower_keynes_1960} analyzes some dynamics. Here, Clower does a basic analysis of what treating the labor supply and demand curves as a dynamical system would mean. There is no mathematics in it per se, but it describes how an expected dynamical system would behave. This system looks at labor rather than supply and demand of goods and services, which has come across many critiques over time \cite{mankiw_quick_1990}. One of these is how it does not allow for high inflation and involuntary unemployment at the same time the way it is described. In all actuality though, those states are in the model to the right of both curves, but are considered obviously transient and so completely glossed over and left out of the analysis. This begs the question of what does it mean to sit in that ``transient'' zone of the dynamical system, perhaps this is where the unstable equilibrium lies in the model we seek to create?
+
+The second paper is by Ball and Romer from 1990, ``Real Rigidities and the Non-Neutrality of Money'' \cite{ball_real_1990}. This paper does a lot to examine how prices change, and why that would break Walras' Law as Keynes claimed that it would need to. Note however, that Smale already did some of this \cite{smale_exchange_1976} by using non-tatonment exchanges. This is when a sequence of orders take place throughout time, not necessarily at the same price. The Ball and Romer paper does not utilize dynamical systems perspective in the study its study either, instead it uses calculus tools to analyze a polynomial utility function. The methodology is also agent based in that each trader behaves separately from the rest of the group. The aggregate behavior is then considered to be the simple addition of all of these agents. Their goal is not to discuss general macroeconomic theory, but instead to describe when price stickiness has a noticeable effect on the economy.
+
+The third paper is by Chiarella and Flaschel from 1996, ``Real and Monetary Cycles in Models of Keynes-Wecksell Type'' \cite{chiarella_real_1996}. This paper seems to really focus on addressing the issue of the dynamical system models not being practical enough. It skips over looking at supply and demand specifically as a dynamical system, and addresses the entire monetary system leaving supply and demand as implicit parts of the six equations governing the system. They do focus their analysis on the dynamical system and by creating numerical simulations of it. I still want to read this paper in depth to get a better understanding of it.
+
+Finally, I just want to mention that work with dynamical systems in supply and demand did continue in a very applied sense. For instance there is this paper by Nagurney, Takayama, and Zhang \cite{nagurney_massively_1995}. It focuses on the computational side of how to compute the equilibrium price for a specific sector given a set of assumptions, including knowing the demand price. I have also seen dynamical system supply and demand models for very specific markets, including the water resources of the Haihe River Basin in 2014 \cite{di_modeling_2014}.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{The Current Story}\label{current} %(must do more lit review before writing this)
+As things stand, I think most economists agree that Classical Economics is a special case of Keynesian Economics. This is because they do not think of Keynesian as a different equilibrium, but instead as the concept of having a system not in equilibrium, aka disequilibrium economics. That means that the current representations of the dynamical system supply and demand model I have read about only have one equilibrium point. Most often this is Walrasian, aka where the supply curve intersects the demand curve. However, Smale discussed the idea of a price equilibrium instead defined as when each agent maximizes their utility on their budget relative to wealth at equilibrium. Further, except for Smale's work which critiques this, every model I have seen is deterministic.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{What can we add to it?}
+I have not seen any work that uses a two stable equilibrium point dynamical system as Hong proposed. In this case I would expect one stable equilibrium point to be the Classical Economics Walrasian one, and the other some kind of a ``depression'' point. One idea of mine comes from how theoretically all of the money in a liassez-faire capitalism system would continue to accumulate into fewer and fewer hands until a handful, and potentially one person has all of the wealth. This is a result that has come from studies on wealth inequality and could be useful here. Another hope of mine, is that this different approach to the dynamical system describing supply and demand will elucidate the 1970's, and how we got into a cycle of increasing inflation and involuntary unemployment. 
+
+There are also a few ways to add to the basic dynamical system that I would be interested in:
+
+One is that I would like to build off of the concept of price rigidities and how that could potentially lead one to behave in a non-Walrasian manner when price setting. I have only seen these as separate things published in separate papers \cite{ball_real_1990, clower_keynes_1960}. I think this would be a fascinating and interesting thing to add on to a model and see how it effects the dynamics. 
+
+Another interesting economic phenomenon to add to the supply and demand model would be the idea of excess demand which Clower brings up \cite{clower_coordination_1984}, specifically in reference to someone who really likes champagne, and so purchases more than their budget in it. Especially with the increase in credit card usage since the 1970's, %technically around since 1958 as Bankamericard which was renamed to VISA https://www.creditcards.com/credit-card-news/history-of-credit-cards.php
+and with the bottom 50 percentile of wealth having a negative average in America, I would want to study this effect. This is also called Dual Decision Theory, and I included it in Section \ref{fixes}
+
+Finally, as I mentioned in Section \ref{current}, there is a great lack of non-deterministic models. Modeling with a random dynamical system is not something I have seen in the literature, although it is also not something I have specifically looked for yet. However, this is a approach that I think would be more accessible than cone-fields, as SDE's are a major part of the finance field and so more widely studied.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibliographystyle{ieeetran}
+\bibliography{Supply_And_Demand_Lit_Review}
+
+\end{document}
+

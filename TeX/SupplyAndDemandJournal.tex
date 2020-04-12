@@ -1,0 +1,163 @@
+\documentclass{article}
+
+\title{Supply and Demand Journal}
+\author{Wellen}
+\date{\today}
+
+\input{preamble.tex}
+
+\begin{document}
+
+\begin{figure}%
+\includegraphics[width=\columnwidth]{IMG_0977_HongsSnD.pdf}%
+\caption{The System of ODE's that Hong created to describe supply and demand}%
+\label{hong}%
+\end{figure}
+
+``Does it make sense?  If not why?  If yes, has anyone already done that? ''
+
+I also want to know if economics is weak chaos (bounded).
+
+In which $\alpha$ and $\beta$ are two positive constants that convert the rate of change in q to that or rate of change in p.
+
+\section{Has anyone already done that?}
+So I answered this question first. I had a meeting with Matt and Hong 02/27/20 where they made clear in person that I was supposed to be doing this at the same time as answering the other two questions. Now, rereading what Hong sent me before Winter Break, I think it also implied that if not at the same time then after. 
+
+The first order simple ODE has been studied extensively by economists, and I looked at and presented one form of this already. Clower wrote a paper analyzing the meaning of the first order dynamical system in regards to the basic supply and demand curves, and disequilibrium theory has done some work with this. 
+
+What has not been done, is the analysis of a second order description of the system that describes the state of depression in the economy as an equilibrium as well. This is the model that I want to work on.
+
+First thing suggested to check is whether this reproduce the figure in
+\url{https://en.wikipedia.org/wiki/Supply_and_demand},'' which is more or less Fig \ref{hong}. What I found in the literature is that this picture is exactly how the current dynamical systems models were made. Rather than checking in retrospect, they defined the calculus analysis already inherent there as the dynamics. My goal is to start from scratch as best I can and then see how that compares to previous models
+
+
+\section{First Model from Lit}
+
+	A Simple Dynamical System - \underline{Economic Dynamics: Phase Diagrams and Their Economic Application} by Ronald Shone
+	\begin{itemize}
+		\item In a typical economy the price is set by producers, and then adjusted based on observations
+		\item This means typically what is observed in the economy is \emph{dynamic adjustment process}
+		\item To not just discuss that price will increase or decrease so that supply matches demand, we can examine the underlying dynamics behind price movement
+	\end{itemize}
+	
+	\textbf{Model 1}
+	\begin{align*}
+		q_d =& a - bp && b >& 0\\ %linear equation of demand
+		q_s =& c + fp && f >& 0 \\ %linear equation of supply
+		\frac{\d p}{\d t} =& \alpha(q_d - q_s) = \alpha(b+f)p - \alpha(a-c) && \alpha >& 0
+	\end{align*}
+	%solution is p(t) = \frac{a-c}{b+f} + \[p_0 - \(\frac{a-c}{b+f}\)\]e^{-\alpha(b+f)t}
+	%p(0) = p_0
+	$q_d,\ q_s,\ \&\ p$ are continuous functions of time.
+
+Supply and Demand
+	\begin{figure}
+		\centering
+			\includegraphics{SnD.png}
+		\caption{Walrasian supply and demand}
+	\end{figure}
+	
+	At equilibrium we have that $\frac{\d p}{\d t} = \alpha(q_d - q_s) = 0 \ \Rightarrow \ p^* = \frac{a-c}{b+f}$ and $q^* = \frac{af + bc}{b+f}$
+
+Without Stocks
+	\begin{assumption}
+		In disequilibrium the short side of the market is transacted. In other words only current supply is available to fill demand and there is no stock of goods.
+	\end{assumption}
+	\begin{itemize}
+		\item Excess demand gives a signal for producers to increase supply and price
+		\item Excess supply gives signal for producers to decrease supply and price
+		\begin{itemize}
+			\item It says nothing about what happens to excess goods...
+		\end{itemize}
+	\end{itemize}	
+
+With Stocks
+	\begin{assumption}
+		Stocks are sufficient to meet demand at any price, and price adjusts to changes in stock levels.
+	\end{assumption}
+	\textbf{Model 2}
+	\begin{align*}
+		i =& i_0 + \int_0^t{q_s - q_d}\d t\\
+		\frac{\d i}{\d t} = & q_s - q_d \\
+		\frac{\d p}{\d t} =& -\alpha\frac{\d i}{\d t} = \alpha(q_d - q_s) && \alpha > 0
+	\end{align*}	
+	\begin{itemize}
+		\item The price path solution is the same
+		\item However now we allow for the quantity traded to increase s.t. $q(t) = q_d(t)\ \fa\ p$
+	\end{itemize}
+
+Further systems
+	\begin{itemize}
+		\item This approach can be applied to labor markets with and without flexible wages
+		\item These labor models are then related to supply and demand in that decreases in price indicate decreases in labor demand
+		\begin{itemize}
+			\item In sticky wage models we make assumptions about how demand once again determines dynamics
+			\item There are also assumptions accounting for how there are asymmetric adjustments: wages increase faster than they decrease
+		\end{itemize}
+		\item Discretizing the time flow leads to what is called the cobweb model
+	\end{itemize}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{My Model}
+\subsection{Things that go into supply and demand}
+\begin{itemize}
+	\item supply
+	\item demand
+	\item price
+	\item quantity
+	\item current stock
+	\item expiration of stock (rate of decay of item, often idealized to infinity or zero)
+	\item utility - useful, time it takes to acquire, ease of use, etc.
+	\item available substitutions
+	\item budget, including savings ( so expected much less than income because housing and so on)
+	\item coolness factor
+	\item elasticity (assumed linear or is it non-linear?)
+\end{itemize}
+
+\subsection{How do supply and demand interact?}
+Something interesting that I always thought was left out is rarity. It is really obvious in trading cards, but also in Grey Poupon mustard. Something can be more expensive and that attracts people to it perhaps because of ideas of luxury. Because of this sort of thing, I do not believe that the interaction between supply and demand is linear, so then the question is what kind of non-linearity makes sense. 
+
+I do not believe it would be oscillatory, so the question is what order polynomial and how does it relate? 
+Thinking about AMATH 568 for non-linear ODE's, we work almost entirely with non-linear second order ODE's. Here we have been working with second order ODE's, so I need to think more about how this translates into real world systems. Also sometimes one of our terms has a very small constant out in front. For example what we have below is a second order ODE with a very small damping term. 
+\begin{align*}
+	-y''[q] - \eps y'[q] +y[q] = 0
+\end{align*}
+Since $y''[q]$ has an opposing sign to $y[q]$ we may think of the exponential function as our ansatz. The inclusion of the damping term would keep our solution from shooting off to $\infty$. 
+
+Supply and Demand would also be positively correlated. As demand increases supply will increase to match, but less than the quantity demanded, since the price should also be able to increase. This is in an idealized market of course, since if there are competitors, that could keep a company from raising there prices. However, a company will never supply more than the amount demanded since that will drive down prices and thus profit margin, while also increasing stocks leading to reduced profit in the future. When demand quantity decreases we would then expect the supply quantity to decrease more than this, for similar reasons to why it would increase less than with demand increase. We can call this amount of disconnect in change $\delta$ so that we have $\frac{\d q_S}{\d t} \approx (1-\delta)q_d$.
+
+From macroeconomic textbooks we have that 
+\begin{align}
+	\dot{q}_S = &  c_1 q_D + (\frac{dS}{dq} - \frac{dD}{dq})^{-1}\dot{q}_D \\
+	& \ \ \ +\eps\ddot{q}_D %\label{predict_demand}
+\end{align}
+But from this equation we come to the big question of what $\frac{dS}{dq}$ and $\frac{dD}{dq}$ mean. So perhaps it is still useful to call this term $(1-\delta)$ where we can theoretically understand $\delta$ as the inverse of the spread between what the producers and the consumers theoretically expect for that quantity of goods in the market. An interesting note is that for linear systems the amount that $\dot{q}_S$ changes does not depend on if the change in $q_D$ was positive or negative.
+
+Further, is it possible that in an attempt to predict the necessary supply in the future the company adds on a second derivative term such as \eqref{predict_demand}? 
+It would be optimizing in that if they expect things to change quickly, they can try not to run out of stock in stores. This may be especially relevant for the case of perishable goods where rather than always being behind demand until it reaches a equilibrium, trying to be ahead and always have supplied what the consumers will purchase. This would likely need an unknown constant in front of the term that is less than one (it probably has less cost associated to under-perform still). 
+
+We also want to look into how the quantity demanded changes changes over time. I believe as a consumer, that this will be based mostly on the price, where $p$ is the transaction price taking place in the market. There is also something to be said for ease of access and rarity of the goods, so I believe that a positive quadratic term makes sense for the supply available effecting the quantity demanded. I argue that change in quantity supplied is not noticeable to a consumer. Either the store has the good or it does not, I have no idea what others are up to. Thus the change in quantity supplied term is left out. 
+\begin{equation}
+		\dot{q}_D = - c_1 \dot{p} - c_2(q_S-c_3)^3
+\end{equation}
+
+In this system we can assume that companies may change their supply without a large effect on consumption, as long as the consumers can still easily access a good (or highly value the rarity of it which is handled in $c_3$).
+
+\subsubsection{Taking Stocks of Goods into Account}
+The stock of excess supplied goods also needs to be taken into account. This is only relevant for the case of non-perishable goods, just as I would guess that the second derivative term is only relevant for the case of perishable goods. Do companies want at least a certain amount stockpiled? The only difference in the model is that companies would make less money, so we can ignore this in terms of understanding the dynamics. One major difference is that the as stockpiles grow, prices tend to drop as a way of clearing them out. So it's not just about the amount supplied, but the amount in total available that determines changes in price. We definitely know that 
+\begin{equation*}
+	\dot{b} = q_s - q_d
+\end{equation*}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Problems}
+\begin{itemize}
+	\item It seems like it would be less relevant/useful to model q, the surplus quantity supplied, than changes in the quantity demanded and the quantity supplied. This is partially because then when we see changes (since presumable preferences do have the possibility of changing over time) we can relate this to the model better.
+	\item I don't think S and D should be rates but functions that are greater than or equal to 0. This way aggregate supply and aggregate demand could also be modeled in the same system, and these are generally not considered to be linear.
+\end{itemize}
+
+
+\end{document}

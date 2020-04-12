@@ -1,0 +1,90 @@
+\documentclass{article}
+
+\title{PhD Outline}
+\author{Wellen}
+\date{\today}
+
+\input{preamble.tex}
+
+\begin{document}
+
+\title
+
+\section{Generic Model from Literature}
+
+	A Simple Dynamical System - \underline{Economic Dynamics: Phase Diagrams and Their Economic Application} by Ronald Shone
+	
+	\begin{align}
+		q_d =& a - bp && b >& 0 \label{eq:qd1}\\ 
+		q_s =& c + fp && f >& 0 \label{eq:qp1}\\ 
+		\frac{\d p}{\d t} =& \alpha(q_d - q_s) = \alpha(b+f)p - \alpha(a-c) && \alpha >& 0 \label{eq:pt1}
+	\end{align}
+	%solution is p(t) = \frac{a-c}{b+f} + \[p_0 - \(\frac{a-c}{b+f}\)\]e^{-\alpha(b+f)t}
+	%p(0) = p_0
+	$q_d,\ q_s,\ \&\ p$ are continuous functions of time.
+	
+	\begin{figure}[b]
+		\centering
+			\includegraphics[width = 0.6\columnwidth]{Figures/simple_system.png}
+		\caption{The vector field plot of the system described in \eqref{eq:qd1}}
+		\label{fig:model1} 
+	\end{figure}
+
+We see in Figure \ref{fig:model1} the equilibrium point of $(6 \frac{2}{3}, 3 \frac{1}{3})$. The orange line is the demand line that we are assuming in equation \eqref{eq:qd1}. The green line is the supply line that we assumed in equation \eqref{eq:qs1}. Consumer views on the product are assumed to not change over time, and so they are both held constant. The demand line in orange can also be thought of as the maximum quantity sold at any given price, and so only the values in the bottom left half of the plot should be analyzed as the top right is theoretically impossible.
+In the plot below price is on the y-axis and quantity is the x-axis. It is almost the 90-degree rotation of the plot above. In neither of these plots is it clear what equilibrium is without the original linear system also plotted. 
+
+Interestingly, in figure \ref{fig:model1} we see that prices do not flow towards the price equilibrium, but instead tend to move away from it. This is made even more clear in figure \ref{fig:model1_time_price}, which is the time evolution of price. In this system we see that the price would only reach the equilibrium of $6 \frac{2}{3}$ is by already starting at that value. This is in direct conflict to current theory which states that prices will converge to equilibrium. 
+
+Further, this model does not indicate at all how things evolve if the demand or supply shift. Perhaps further analysis of the parameters $b$ and $f$ is warranted. However, with the other underlying issues in the model, it is not clear that any conclusions drawn would be meaningful. 
+
+	\begin{figure}
+		\centering
+			\includegraphics[width = 0.6\columnwidth]{Figures/simple_priceOverTime.png}
+		\caption{The evolution of price over time according to \eqref{eq:pt1}}
+		\label{fig:model1_time_price} 
+	\end{figure}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{My Model}
+
+Supply and Demand are also be positively correlated. As demand increases supply will increase to match, but less than the quantity demanded, since the price should also be able to increase. This is in an idealized market of course, since if there are competitors, that could keep a company from raising there prices. However, a company will never supply more than the amount demanded since that will drive down prices and thus profit margin, while also increasing stocks leading to reduced profit in the future. When demand quantity decreases we would then expect the supply quantity to decrease more than this, for similar reasons to why it would increase less than with demand increase. We can call this amount of disconnect in change $\delta$ so that we have $\frac{\d q_S}{\d t} \approx (1-\delta)q_d$.
+
+From macroeconomic textbooks we have that 
+\begin{align}
+	\dot{q}_S = &  c_1 q_D + (\frac{dS}{dq} - \frac{dD}{dq})^{-1}\dot{q}_D \\
+	& \ \ \ +\eps\ddot{q}_D %\label{predict_demand}
+\end{align}
+But from this equation we come to the big question of what $\frac{dS}{dq}$ and $\frac{dD}{dq}$ mean. So perhaps it is still useful to call this term $(1-\delta)$ where we can theoretically understand $\delta$ as the inverse of the spread between what the producers and the consumers theoretically expect for that quantity of goods in the market. An interesting note is that for linear systems the amount that $\dot{q}_S$ changes does not depend on if the change in $q_D$ was positive or negative.
+
+Further, is it possible that in an attempt to predict the necessary supply in the future the company adds on a second derivative term such as \eqref{predict_demand}? 
+It would be optimizing in that if they expect things to change quickly, they can try not to run out of stock in stores. This may be especially relevant for the case of perishable goods where rather than always being behind demand until it reaches a equilibrium, trying to be ahead and always have supplied what the consumers will purchase. This would likely need an unknown constant in front of the term that is less than one (it probably has less cost associated to under-perform still). 
+
+We also want to look into how the quantity demanded changes changes over time. I believe as a consumer, that this will be based mostly on the price, where $p$ is the transaction price taking place in the market. There is also something to be said for ease of access and rarity of the goods, so I believe that a positive quadratic term makes sense for the supply available effecting the quantity demanded. I argue that change in quantity supplied is not noticeable to a consumer. Either the store has the good or it does not, I have no idea what others are up to. Thus the change in quantity supplied term is left out. 
+
+Something interesting that I always thought was left out is rarity. It is really obvious in trading cards, but also in Grey Poupon mustard. Something can be more expensive and that attracts people to it perhaps because of ideas of luxury. Because of this sort of thing, I do not believe that the interaction between supply and demand is linear, so then the question is what kind of non-linearity makes sense. 
+
+\begin{equation}
+		\dot{q}_D = - c_1 \dot{p} - c_2(q_S-c_3)^3
+\end{equation}
+
+In this system we can assume that companies may change their supply without a large effect on consumption, as long as the consumers can still easily access a good (or highly value the rarity of it which is handled in $c_3$).
+
+\subsubsection{Taking Stocks of Goods into Account}
+The stock of excess supplied goods also needs to be taken into account. This is only relevant for the case of non-perishable goods, just as I would guess that the second derivative term is only relevant for the case of perishable goods. Do companies want at least a certain amount stockpiled? The only difference in the model is that companies would make less money, so we can ignore this in terms of understanding the dynamics. One major difference is that the as stockpiles grow, prices tend to drop as a way of clearing them out. So it's not just about the amount supplied, but the amount in total available that determines changes in price. We definitely know that 
+\begin{equation*}
+	\dot{b} = q_s - q_d
+\end{equation*}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Problems}
+\begin{itemize}
+	\item It seems like it would be less relevant/useful to model q, the surplus quantity supplied, than changes in the quantity demanded and the quantity supplied. This is partially because then when we see changes (since presumable preferences do have the possibility of changing over time) we can relate this to the model better.
+	\item I don't think S and D should be rates but functions that are greater than or equal to 0. This way aggregate supply and aggregate demand could also be modeled in the same system, and these are generally not considered to be linear.
+\end{itemize}
+
+
+\end{document}
