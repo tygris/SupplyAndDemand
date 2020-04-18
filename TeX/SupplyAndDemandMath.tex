@@ -41,7 +41,7 @@ Numerically I analyzed the system with $a = 10,\ b = 1,\ c = 0,\ f = 0.5,$ and $
 
 As expected from the analysis, in figure \ref{fig:model1} we see that prices do not flow towards the price equilibrium, but instead to move away from it. This is made even more clear in figure \ref{fig:model1_time_price}, which is the time evolution of price. In this system we see that the price can only reach the equilibrium of $6 \frac{2}{3}$ by already starting at that value. This is in direct conflict to current theory which states that prices will converge to equilibrium. To achieve a dynamical system that fits a stable equilibrium, we must break one of our main underlying economic assumptions.
 
-There are many problems with this model. First the dynamics don't make sense. Then, this model does not indicate at all how things evolve if the demand or supply shifts.  With the underlying issues in the model, it is not clear that any conclusions drawn would be meaningful. 
+For this model the dynamics don't make sense. Also, this model does not indicate at all how things evolve if the demand or supply shifts. With the underlying issues in the model, it is not clear that any conclusions drawn would be meaningful. There is plenty to explore in this field.
 
 	\begin{figure}
 		\centering
@@ -53,16 +53,41 @@ There are many problems with this model. First the dynamics don't make sense. Th
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \section{My Model}
 
-Supply and Demand are positively correlated. As demand increases supply increases to match, but by a smaller amount. This smaller amount allows the price to also increase, creating greater profit margins. This is in an idealized market of course, since if there are competitors, that could keep a company from raising their prices. However, a company will never purposefully supply more than the amount demanded since that will drive down prices and profit margin, while also increasing stocks keeping profit down in the future. When demand quantity decreases we would then expect the supply quantity to decrease more than this. The reasoning is similar to why it would increase less than with demand increase. We can call this amount of disconnect in change $\delta$. $\delta$ is then approximately $(\frac{dS}{dq} - \frac{dD}{dq})^{-1}$ according to the linear supply and demand model taught in macroeconomics textbooks.
+Here I am exploring different concepts that I think belong in a model of supply and demand.
+
+I am working with at least five different curves:
+\begin{enumerate}
+	\item The supply curve: a plot of the quantity willing to be supplied for any given price. This may change over time. Note that this is quantity vs. price.
+	\item The demand curve: a plot of the quantity that consumers are willing and able to purchase for any given price. This may change over time. Note that this is quantity vs. price.
+	\item Demand over time: the quantity of goods actually purchased from a marketplace at time $t$. Note that this is quantity vs. time.
+	\item Supply over time: the amount of goods contributed to the marketplace at time $t$. Note that this is quantity vs. time.
+	\item Price over time: how prices that the good(s) are sold at change over time. Note that this is price vs. time. Marketplace Equilibrium is defined as the price where the quantity purchased at time $t$ is equivalent to the quantity supplied at time $t$. Marketplace equilibrium should theoretically also be an equilibrium of the dynamical system. 
+\end{enumerate}
+This list 
+
+\subsection{The Evolution of Supply Over Time}
+\begin{itemize}
+	\item Quantity supplied and quantity demanded are positively correlated
+	\item Changes in the ``supply curve'' and ``demand curve'' ought to change over time
+	\item My model should be able to handle non-linear supply and demand curves. 
+	\begin{itemize}
+		\item Start with quadratic case, this is often used to describe global supply and demand
+	\end{itemize}
+\end{itemize}
+
+\subsubsection{Constant Shifts in the Curves}
+The quantity supplied and quantity demanded are positively correlated. As demand increases supply increases to match, but by a smaller amount. This smaller amount allows the price to also increase, creating greater profit margins. This is in an idealized market of course, since if there are competitors, that could keep a company from raising their prices. However, a company will never purposefully supply more than the amount demanded since that will drive down prices and profit margin, while also increasing stocks keeping profit down in the future. When demand quantity decreases we would then expect the supply quantity to decrease more than this. The reasoning is similar to why it would increase less than with demand increase. We can call this amount of disconnect in change $\delta$. $\delta$ is then approximately $(\frac{dS}{dq} - \frac{dD}{dq})^{-1}$ according to the linear supply and demand model taught in macroeconomics textbooks.
 
 Thus we have that 
 \begin{align}
-	\dot{q}_S = &  (\frac{dS}{dq} - \frac{dD}{dq})^{-1}(q_D +\dot{q}_D) \label{my_dqs}\\
-	& \ \ \ +\eps\ddot{q}_D  \label{predict_demand}
+	\dot{q}_S(t) = (\frac{dS}{dq} - \frac{dD}{dq})^{-1}(\dot{q}_D(t)) \label{eq:dqs_1}\\
+	& \ \ \ +\eps\ddot{q}_D(t)  \label{eq:predict_demand}
 \end{align}
-From equation \eqref{my_dqs} we come to the big question of what does $\frac{dS}{dq}$ and $\frac{dD}{dq}$ mean? These are the slopes of the linear lines in the model displayed in Figure \ref{fig:SnD}. As written though, we are missing the dependence on time, which means that we just shift the intercepts as shown. This means that we need to allow a time dependence in $\frac{dS}{dq}$ and $\frac{dD}{dq}$. Even if we do that though, I have still only thought about them as linear so that we can calculate a constant coefficient out front of $(q_D +\dot{q}_D)$. What happens if the slope is non-linear so that it matters what the current market quantity/prices are?   
+From equation \eqref{eq:dqs_1} we come to the big question of what does $\frac{dS}{dq}$ and $\frac{dD}{dq}$ mean? These are the slopes of the linear lines in the model displayed in Figure \ref{fig:SnD}. As written, this model only allows for the shifts in intercepts as shown in Figure \ref{fig:SnD}. Only shifts are allowed because we do not allow the slopes to vary over time, and the way this is written assumes that we are working with linear underlying functions.   
 
 \begin{figure}
 	\centering
@@ -71,9 +96,24 @@ From equation \eqref{my_dqs} we come to the big question of what does $\frac{dS}
 	\label{fig:SnD} 
 \end{figure}
 
-Another aspect to the model is that it is possible that to an attempt to predict the necessary supply in the future, companies add on a second derivative term such as \eqref{predict_demand}.
+Even though it is linear, another aspect to the model is that firms may attempt to predict the necessary supply in the future. This is included as a second derivative term in \eqref{eq:predict_demand}.
 It would be optimizing in that if they expect things to change quickly, they can try not to run out of stock in stores. This may be especially relevant for the case of perishable goods where rather than always being behind demand until it reaches a equilibrium, companies are trying to be ahead and always have supplied what the consumers will purchase. This would likely need an unknown constant in front of the term that is less than one (it should have less cost associated to under-perform in this term). 
 
+
+
+
+\subsubsection{Non-linear shifts}
+The model in \ref{eq:dqs_1} is still missing the dependence on time. Once we allow a time dependence in $\frac{dS}{dq}$ and $\frac{dD}{dq}$. Even if we do that though, I have still only thought about them as linear so that we can calculate a constant coefficient out front of $(q_D +\dot{q}_D)$. What happens if the slope is non-linear so that it matters what the current market quantity/prices are?
+
+\begin{align}
+	\dot{q}_S(t) = & \left[(\frac{dS}{dq} - \frac{dD}{dq})(t)\right]^{-1}(q_D(t) +\dot{q}_D(t)) +\eps\ddot{q}_D(t) \label{eq:dqs_2}
+\end{align}
+
+\subsubsection{Quadratic Underlying Curve}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{The Evolution of Quantity Demanded}
 We also want to look into how the quantity demanded changes changes over time. I believe as a consumer, that this will be based mostly on the price, where $p$ is the transaction price taking place in the market. There is also something to be said for ease of access and rarity of the goods, so I believe that a positive quadratic term makes sense for the supply available effecting the quantity demanded. I argue that change in quantity supplied is not noticeable to a consumer. Either the store has the good or it does not, I have no idea what others are up to. Thus the change in quantity supplied term is left out. 
 
 Something interesting that I always thought was left out is rarity. It is really obvious in trading cards, but also in Grey Poupon mustard. Something can be more expensive and that attracts people to it perhaps because of ideas of luxury. Because of this sort of thing, I do not believe that the interaction between supply and demand is linear, so then the question is what kind of non-linearity makes sense. 
@@ -84,7 +124,10 @@ Something interesting that I always thought was left out is rarity. It is really
 
 In this system we can assume that companies may change their supply without a large effect on consumption, as long as the consumers can still easily access a good (or highly value the rarity of it which is handled in $c_3$).
 
-\subsection{Taking Stocks of Goods into Account}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Taking Stocks of Goods into Account}
 The stock of excess supplied goods also needs to be taken into account. This is only relevant for the case of non-perishable goods, just as I would guess that the second derivative term is only relevant for the case of perishable goods. Do companies want at least a certain amount stockpiled? The only difference in the model is that companies would make less money, so we can ignore this in terms of understanding the dynamics. One major difference is that the as stockpiles grow, prices tend to drop as a way of clearing them out. So it's not just about the amount supplied, but the amount in total available that determines changes in price. We definitely know that 
 \begin{equation*}
 	\dot{b} = q_s - q_d
@@ -93,9 +136,11 @@ The stock of excess supplied goods also needs to be taken into account. This is 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \section{Problems}
 \begin{itemize}
-	\item It seems like it would be less relevant/useful to model q, the surplus quantity supplied, than changes in the quantity demanded and the quantity supplied. This is partially because then when we see changes (since presumable preferences do have the possibility of changing over time) we can relate this to the model better.
+	\item It seems like it would be less relevant/useful to model the surplus quantity supplied, than changes in the quantity demanded and the quantity supplied. This is partially because then when we see changes (since presumable preferences do have the possibility of changing over time) we can relate this to the model better.
 	\item I don't think S and D should be rates but functions that are greater than or equal to 0. This way aggregate supply and aggregate demand could also be modeled in the same system, and these are generally not considered to be linear.
 \end{itemize}
 
