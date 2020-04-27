@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7300 64-bit) (preloaded format=pdflatex 2020.3.2)  27 MAR 2020 14:11
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7300 64-bit) (preloaded format=pdflatex 2020.3.2)  17 APR 2020 11:31
 entering extended mode
 **./SupplyAndDemandMath.tex
 (SupplyAndDemandMath.tex
@@ -582,7 +582,14 @@ File: l3backend-pdfmode.def 2020-02-23 L3 backend support: PDF mode
 \l__kernel_color_stack_int=\count297
 \l__pdf_internal_box=\box65
 )
-(SupplyAndDemandMath.aux)
+(SupplyAndDemandMath.aux
+
+LaTeX Warning: Label `my_dqs' multiply defined.
+
+
+LaTeX Warning: Label `predict_demand' multiply defined.
+
+)
 \openout1 = `SupplyAndDemandMath.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 9.
@@ -712,46 +719,62 @@ File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 <Figures/simple_system.png, id=4, 390.45876pt x 266.9975pt>
 File: Figures/simple_system.png Graphic file (type png)
 <use Figures/simple_system.png>
-Package pdftex.def Info: Figures/simple_system.png  used on input line 28.
+Package pdftex.def Info: Figures/simple_system.png  used on input line 35.
 (pdftex.def)             Requested size: 281.85587pt x 192.74321pt.
-<Figures/simple_priceOverTime.png, id=6, 390.45876pt x 266.9975pt>
+ [1
+
+{C:/Users/HopesAndDreams/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./
+Figures/simple_system.png>]
+<Figures/simple_priceOverTime.png, id=19, 390.45876pt x 266.9975pt>
 File: Figures/simple_priceOverTime.png Graphic file (type png)
 <use Figures/simple_priceOverTime.png>
-Package pdftex.def Info: Figures/simple_priceOverTime.png  used on input line 3
-6.
+Package pdftex.def Info: Figures/simple_priceOverTime.png  used on input line 4
+8.
 (pdftex.def)             Requested size: 281.85587pt x 192.74321pt.
- [1{C:/Users/HopesAndDreams/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}
+ [2 <./Figures/simple_priceOverTime.png>]
 
- <./Figures/simple_system.png> <./Figures/simple_priceOverTime.png>]
+LaTeX Warning: Reference `eq:dqs_1' on page 3 undefined on input line 90.
 
-LaTeX Warning: Reference `predict_demand' on page 2 undefined on input line 63.
+<Figures/SnD.png, id=25, 249.93375pt x 148.555pt>
+File: Figures/SnD.png Graphic file (type png)
+<use Figures/SnD.png>
+Package pdftex.def Info: Figures/SnD.png  used on input line 94.
+(pdftex.def)             Requested size: 281.85587pt x 167.54556pt.
+
+LaTeX Warning: Reference `eq:predict_demand' on page 3 undefined on input line 
+99.
 
 
-[2] [3] (SupplyAndDemandMath.aux)
+LaTeX Warning: Reference `eq:dqs_1' on page 3 undefined on input line 106.
+
+[3 <./Figures/SnD.png>] [4] (SupplyAndDemandMath.aux)
 
 LaTeX Warning: There were undefined references.
 
+
+LaTeX Warning: There were multiply-defined labels.
+
  ) 
 Here is how much of TeX's memory you used:
- 16917 strings out of 481277
- 314381 string characters out of 2918476
- 551077 words of memory out of 3000000
- 32073 multiletter control sequences out of 15000+200000
- 535780 words of font info for 39 fonts, out of 3000000 for 9000
+ 16935 strings out of 481277
+ 314669 string characters out of 2918476
+ 550140 words of memory out of 3000000
+ 32090 multiletter control sequences out of 15000+200000
+ 536385 words of font info for 41 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 63i,9n,62p,842b,334s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 63i,9n,62p,1015b,334s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\HopesAndDreams\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/e
 c/dpi600\tcrm1000.pk><C:/Program Files/MikTeX/fonts/type1/public/amsfonts/cm/cm
 bx10.pfb><C:/Program Files/MikTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:
-/Program Files/MikTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Fil
-es/MikTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Program Files/MikTeX/fon
-ts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Files/MikTeX/fonts/type1/publ
-ic/amsfonts/cm/cmr10.pfb><C:/Program Files/MikTeX/fonts/type1/public/amsfonts/c
-m/cmr7.pfb><C:/Program Files/MikTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><
-C:/Program Files/MikTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
-Output written on SupplyAndDemandMath.pdf (3 pages, 202117 bytes).
+/Program Files/MikTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Fil
+es/MikTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MikTeX/fo
+nts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Files/MikTeX/fonts/type1/pub
+lic/amsfonts/cm/cmr10.pfb><C:/Program Files/MikTeX/fonts/type1/public/amsfonts/
+cm/cmr7.pfb><C:/Program Files/MikTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+<C:/Program Files/MikTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
+Output written on SupplyAndDemandMath.pdf (4 pages, 358271 bytes).
 PDF statistics:
- 61 PDF objects out of 1000 (max. 8388607)
+ 66 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 23 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 28 words of extra memory for PDF output out of 10000 (max. 10000000)
 
