@@ -1,10 +1,15 @@
-\usepackage[utf8]{inputenc}
+﻿\usepackage[utf8]{inputenc}
 \usepackage[margin=1in]{geometry}
 \usepackage{url, appendix, pdfpages, subcaption} %for inputting urls, appendices, outside docs, and placing multiple pictures in the same figure
 %http://blog.bharatbhole.com/inserting-pages-from-an-external-pdf-document-within-a-latex-document/
 \usepackage{float} %[H] tells LaTeX you absolutely want an image there
 \usepackage{fancyhdr, enumitem}
-\usepackage{amsmath, amssymb, mathrsfs, dsfont, amsthm,  cancel} %gives math symbols and environments
+\newcommand{\compresslist}{ % Define a command to reduce spacing within itemize/enumerate environments, this is used right after \begin{itemize} or \begin{enumerate}
+	\setlength{\itemsep}{0pt}
+	\setlength{\parskip}{0pt}
+	\setlength{\parsep}{10pt}
+}
+\usepackage{amsmath, amssymb, mathrsfs, dsfont, amsthm,  cancel}
 \usepackage[mathscr]{eucal} %for getting less bold and swirlier math scripts
 \usepackage{graphicx, tikz, wrapfig} %for figures, figure creation, and haveing text to the left of a figure
 \allowdisplaybreaks[1]
@@ -16,9 +21,6 @@
 \makeatletter         
 %\def\@maketitle{{\bfseries\@title}\\ \@author \\ \@date }
 
-\usepackage[noadjust]{cite} %for bibtex files
-	%\bibliographystyle{ieeetran} \bibliography{filename}
-	%use \nocite{*} to get the entire bibtex file in references
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
@@ -127,6 +129,9 @@
 \newcommand\Fv{\mathbf{F}}
 \newcommand\xv{\mathbf{x}}
 \newcommand\bv{\mathbf{b}}
+\newcommand\pv{\mathbf{p}}
+\newcommand\qv{\mathbf{q}}
+\newcommand\ev{\mathbf{e}}
 \newcommand\yv{\mathbf{y}}
 \newcommand\zv{\mathbf{z}}
 \newcommand\Yv{\mathbf{Y}}
@@ -138,6 +143,7 @@
 \newcommand\muv{\boldsymbol \mu}
 \newcommand\Sv{\textbf S}
 \newcommand\Qv{\textbf Q}
+\newcommand\zev{\textbf 0}
 
 %                   Letters with Hats
 
@@ -153,6 +159,7 @@
 \newcommand\Yh{\widehat{Y}}
 \newcommand\Ah{\widehat{\Ac}}
 \newcommand\uh{\widehat{u}}
+\newcommand\Uh{\widehat{U}}
 \newcommand\vh{\widehat{v}}
 \newcommand\fh{\widehat{f}}
 \newcommand\Hh{\widehat{H}}
@@ -183,6 +190,29 @@
 \newcommand\Gamt{\widetilde{\Gam}}
 \newcommand\Pct{\widetilde{\Pc}}
 
+
+%         Theorem environments
+
+\newtheoremstyle{mine}% name of the style to be used
+  { }% measure of space to leave above the theorem. E.g.: 3pt
+  { }% measure of space to leave below the theorem. E.g.: 3pt
+  { }% name of font to use in the body of the theorem
+  { }% measure of space to indent
+  { }% name of head font
+  { }% punctuation between head and body
+  { }% space after theorem head; " " = normal interword space
+  {\thmname{\textbf{#1}}\thmnumber{\textbf{ #2}}:\thmnote{ #3}\\}% Manually specify head
+
+\theoremstyle{mine}
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{defn}[thm]{Definition}
+\newtheorem{rmk}[thm]{Remark}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{assumption}[thm]{Assumption}
+
+
 %                   other macros
 
 \newcommand{\dd}{\partial}
@@ -195,17 +225,6 @@
 \newcommand\ki{\mathrm{ki}}
 \newcommand\rb{\mathrm{rb}}
 \newcommand\eu{\mathrm{eu}}
-
-
-%         Theorem environments
-
-\newtheorem{thm}{Theorem}[section]
-\newtheorem{cor}{Corollary}[thm]
-\newtheorem{prop}[thm]{Proposition}
-\newtheorem{defn}[thm]{Definition}
-\newtheorem{rmk}{Remark}[thm]
-\newtheorem{lem}[thm]{Lemma}
-\newtheorem{assumption}{Assumption}
 
 %          other
 

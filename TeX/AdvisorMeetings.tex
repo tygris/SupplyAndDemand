@@ -1,0 +1,143 @@
+\section{Advisor Meetings}
+%-----------------------------------------------------------------------------------------------
+\subsection{April 17, 2020}
+My next steps are 
+\begin{enumerate}
+	\item Read Chapter 1 of Murray
+	\begin{enumerate}
+		\item Try and translate this into economics
+		\item Be prepared to present this to the group
+		\item I'm looking for how to think about dynamical systems and how they are presented
+	  \item Afterwards I will read Chapter 3 and probably Chapter 10
+	\end{enumerate}
+	\item Use Mathematica to manipulate the streamplot from section 1 of SupplyAndDemandMth.pdf. The goal here is to play with how different parameters change the system. 
+	\item create a supply and demand logistic equation, where supply is the birth and demand is the death. This is another way of thinking about the system in a new way.
+	\item fluid limit is something that I may want to understand. It relates to queueing thoery, and how random systems behave in the limit (kind of like a smoothing I think)
+	%\item Ask Yu-Chin Chen and Jing Tao to meet about being a committee member
+	%\item Ask Professor Burdzy to be my GSR
+	%\item When taking an economics courses, pass fail would be good so that I can take notes with the goal of re-writing the course from a mathematically ``interesting point-of-view.''
+	%\item Find at least two more mathematical economists besides Smale. Where are they publishing?
+\end{enumerate} 
+
+
+
+%-----------------------------------------------------------------------------------------------
+\subsection{April 30, 2020: Group Meeting}
+I presented, Murray\_Economics\_Style.pdf, the slides I made based on reading Murray \underline{Mathematical Biology: An Introduction} Chapter 1. 
+\begin{itemize}
+	\item I would like the quote by ``Boo-show'': ``A fit is not a theory''
+	\item In order to get a demand/consumption curve that is not monotonic, we need to have some kind of positive feedback
+	\item We will almost definitely need multiple goods to achieve any kind of positive feedback
+	\item money/investments is an example of an economic item that may follow logistic??? or maybe just exponential growth. It is something that grows based on how much you already have
+	\item What happens when we add an $\eps$ times Brownian Motion term to our economic model? What is the difference between $\lim_{\eps \rightarrow 0} \lim_{t\rightarrow\infty}$ and $\lim_{t\rightarrow\infty} \lim_{\eps \rightarrow 0}$ on the growth model (i.e. logistic growth)
+\end{itemize}
+
+
+
+
+%-----------------------------------------------------------------------------------------------
+\subsection{May 1, 2020}
+\begin{enumerate}
+	\item economics systems should not be understood from discontinuity, but in terms of limits 
+	\\ i.e. how do we get price to be zero (or would it be infinite, like a assymptote?) when quantity is zero
+	\item we need to think about how instantaneously differs from frozen time supply and demand models. Are they really the same?
+	\item Is there a different local demand curve that we need to focus on? Think multiple scales.
+	\item Imagine the most reasonable economic situation and try to write an equation to describe that
+	\item Always be thinking where does this come from. Question everything you read and think about how to modify it. $\leftarrow$ especially when taking econ courses
+	\item we need some kind of history dependent term that can handle people's awareness of the product. It's probably not going to be a function of price/quantity though
+	\item Have people in economics looked at hysteresis? It should be built into the model, but we may expect to see this in what we do
+\end{enumerate}
+\textbf{To Do:}
+\begin{enumerate}
+	\item Check-out the basic model plot? Why is quantity not being taken into account? Everything should converge to the point, not just the line in 2-D
+	\item Read the intro that Hong sends out regarding different types of models. I need to be able to explain the importance of mechanistic models and convince others that this is a meaningful pursuit
+	\item Read about the different aggregation models in economics for micro to macro scales, what do they have, where does it come from? 
+\end{enumerate}
+
+
+
+%---------------------------------------------------------------------------------
+\subsection{May 08, 2020}
+\begin{itemize}\compresslist
+	\item partial derivative of utility is assuming everyone maximizes at the same time
+	\item utility relates to random behavior? - aka difference preferences for buying things
+	\item what does it mean to have a stochastic model to describe when people buy what?
+	\begin{itemize}\compresslist
+		\item and to have utility theory to describe this behavior
+		\item i.e. Markov or Poisson process...
+		\item at given price level people buy this product at a certain rate
+	\end{itemize}
+	\item utility is a fundamental part of what is happening as part of mathematical theory
+so we can back out the (one) ``utility'' function from the dynamics - this has mathematical basis i.e. a landscape like Gibbs function
+	\begin{itemize}\compresslist
+		\item it should be a distribution because it describes the entire community
+	\end{itemize}
+		\item But isn't a utility function only defined as such when it is concave and increasing?
+		\item So show theory of utility function in connection to agent based dynamics
+		\item Some kind of conservation of mass in terms of quantities supplied and demanded
+\end{itemize}
+
+To Do List:
+\begin{enumerate}
+	\item Understand how to use utility function to understand equilibrium - type up a doc to show in meeting next week
+	\item Ask Yuchen about paper of supply and demand functions
+	\item Work on the streamline plot to ensure quantity is being plotted (supply and demand not price and quantity?)
+	\item I need to research how multiple competing goods and marginal utility combine
+\end{enumerate}	
+
+
+
+
+%---------------------------------------------------------------------------------
+\subsection{May 15, 2020}
+Today we looked over the notes I wrote-up for how marginal-utility plays a role in the demand function (at least for Marshallian Demand). It was clear that all of the current assumptions about how utility functions should look (monotonic and strictly convex) were chosen purely out of mathematical convenience so that the optimization problem set-up would have a unique solution that is relatively simple to compute. Hong came up with the idea to explore ``utility'' not as an ordering of preferences, but as a probability distribution. Moving forward it is my job to make sure I fully understand what this means. Here are my notes on what is going on:
+\begin{itemize}
+	\item We are working with a joint probability distribution for all of the goods in our system. Starting with two goods, this is a joint distribution on $(x_1, x_2).$
+	\item We maintain the constraint that $p_1x_1 + p_2x_2 = y$ where $\pv$ is the vector of market prices and $y$ is the budget of the consumer. 
+	\begin{itemize}
+		\item The goal here is to collapse the distribution onto a single line in the $x_1, x_2$ plane.
+		\item This also means that choosing a value for either $x_1$ or $x_2$ gives us the exact value of the other, so it is like reducing down to one variable.
+		\item \textcolor{red}{This should lead to a marginal on $y$.} $\leftarrow$ don't understand this yet (wouldn't it be $x_1$?) 
+	\end{itemize}
+	\item It would take massive surveying and strong statistical analysis to practically use this model. ``With \$$y$ how much of $x_1$ and how much of $x_2$ would you buy?''
+	\item Since we don't have the statistics \textcolor{red}{(maybe I should do a literature search on this)}, we will instead work with the Strong Law of Large Numbers and Central Limit Theorem. 
+	\item We want to assume a large enough scale so that it is a normal distribution of ``preferences''
+	\item This whole time our probability will have to be conditioned on price. \textcolor{red}{aka how can I encode the constraint into the system?}
+	\item If the population goes to $\infty$ what does the distribution look like? It should become a distribution of the averages of the normal distributions \textcolor{red}{because it was conditioned on price?}
+\end{itemize}
+
+%----------------------------------------------------------------------------------------
+\subsection{May 22, 2020}
+
+\begin{itemize}
+	\item we don't need to actually define $(\Om, \Ac, \Pb)$. Just stating it exists is enough. Leave it general because 
+	\item 
+\end{itemize}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
