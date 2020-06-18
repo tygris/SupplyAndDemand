@@ -97,25 +97,70 @@ Today we looked over the notes I wrote-up for how marginal-utility plays a role 
 	\begin{itemize}
 		\item The goal here is to collapse the distribution onto a single line in the $x_1, x_2$ plane.
 		\item This also means that choosing a value for either $x_1$ or $x_2$ gives us the exact value of the other, so it is like reducing down to one variable.
-		\item \textcolor{red}{This should lead to a marginal on $y$.} $\leftarrow$ don't understand this yet (wouldn't it be $x_1$?) 
+		\item {This should lead to a marginal on $y$.} $\leftarrow$ don't understand this yet (wouldn't it be $x_1$?) 
 	\end{itemize}
 	\item It would take massive surveying and strong statistical analysis to practically use this model. ``With \$$y$ how much of $x_1$ and how much of $x_2$ would you buy?''
-	\item Since we don't have the statistics \textcolor{red}{(maybe I should do a literature search on this)}, we will instead work with the Strong Law of Large Numbers and Central Limit Theorem. 
+	\item Since we don't have the statistics {(maybe I should do a literature search on this)}, we will instead work with the Strong Law of Large Numbers and Central Limit Theorem. 
 	\item We want to assume a large enough scale so that it is a normal distribution of ``preferences''
-	\item This whole time our probability will have to be conditioned on price. \textcolor{red}{aka how can I encode the constraint into the system?}
-	\item If the population goes to $\infty$ what does the distribution look like? It should become a distribution of the averages of the normal distributions \textcolor{red}{because it was conditioned on price?}
+	\item This whole time our probability will have to be conditioned on price. {aka how can I encode the constraint into the system?}
+	\item If the population goes to $\infty$ what does the distribution look like? It should become a distribution of the averages of the normal distributions {because it was conditioned on price?}
 \end{itemize}
 
 %----------------------------------------------------------------------------------------
 \subsection{May 22, 2020}
 
 \begin{itemize}
-	\item we don't need to actually define $(\Om, \Ac, \Pb)$. Just stating it exists is enough. Leave it general because 
-	\item 
+	\item we don't need to actually define $(\Om, \Ac, \Pb)$. Just stating it exists is enough. Leave it general because we can never really define all of the parameters that are technically in $\Om$, we can only estimate it with the use of random variables \\ \url{https://arxiv.org/pdf/1902.09536.pdf}
+	\item This means that we assume that $\mu$ exists s.t. we can state that $X_1\ \&\ X_2$ exist and have a probability measure
+	\item we may be interested in examining the log of the joint distribution function $f_{X_1X_2}$ (log is already consistently used as a utility function in econ)
+	\item {Write the conditional(marginal?) distribution of $X_1$ and explore using it in the optimization problem put forth in micro}
+	\item We want to just start with i.i.d.\\
+	%This part frustrating in that it was completely ignored by my advisors. I wanted to know what it would mean for the probability space to work with non-i.i.d. random variables. Hopefully that is a conversation for the day after I get a strong grasp of the i.i.d. case
+	\item {What is the difference between maxing the probability distribution for $X_1$ and for $X_2$? How does it compare to optimizing both at the same time?} %I really like this set of questions. I think it would be really interesting to explore how adding more goods to the ``market'' is impacted in this scenario too (I know there is plenty of literature in economics as well
+	\begin{itemize}
+		\item {Does optimizing with the condition of being $\leq$ instead of $=y$ lead to a different conclusion?}
+		\item For the joint distribution we would probably want to apply the CLT and LLN in multiple dimensions. Also there would be two possibilities, the max is in the interior of $B$, or on the edge. 
+		\item note that the log of a Gaussian function is quadratic s.t. the max is at the mean of the function
+		\item {Why do we need to subtract the means when applying the CLT?}
+		\item when we fix $y$ to get a marginal distribution of $X_1$, we can then apply the SLLN to show that $\exists X_1^*$
+	\end{itemize}
+	\item {What does the Cauchy Distribution look like, when is there no generalized CLT?} i.e. what is a Cauchy Distribution
+	\item {budget is a complicating factor and we don't actually need it}, it tells the story but we can start without it 
+	\item {We need some scaling factor on the utility function.} $\leftarrow$ aka the probability distribution
+	\item We should come to the conclusion that it is not a unique utility function, just something that maintains the relationship of $X_1,$ $X_2$
+	\item {The whole time I am going through this, especially applying the CLT, think about how it relates to perturbation theory and taking limits for each order of convergence separately.}
+	%Eventually the goal is to apply large deviations theory to this way of thinking
 \end{itemize}
 
 
 
+%----------------------------------------------------------------------------------------
+\subsection{June 05, 2020}
+
+Notes on writing style
+\begin{itemize}
+	\item Be clear when and where $\Omega$ plays a role
+	\item When are you talking about a set of events i.e. $B=b$? One needs to be very careful about saying that a constant is equal to a random variable. In continuous space this is more like $B\in [b, b + db]$, aka the infinitesimal set of events near $B=b$.
+	\item Probability is \textbf{NOT} a simple change of variables, always best to write out the probability density functions and cumulative density functions.
+\end{itemize}
+
+Notes about progressing in the research
+\begin{itemize}
+	\item Regarding why in the section on supply as a probability space $\yv^* = \xv^*$, we are assuming equilibrium while discussing the maximum values. This means that all of the same arguments that economists employ should apply here too for why this would be true. % I had not thought about the optimization being equivalent to saying we are at equilibrium until this point.
+	\begin{itemize}
+		\item Why should supply exceed demand? This leads to money loss.
+		\item If demand exceeds supply, this is acknowledging lost money (can raise price OR make more).
+		\item These arguments are essentially the dynamics of how we get to $\yv^* =\xv^*$ 
+	\end{itemize}
+	\item Stochastic means that our $\Pbb$ distribution will come out of the dynamics
+	\item Without treating this as a stochastic process we certainly are missing a piece of the explanation, so we need to be at equilibrium when we examine supply or demand individually
+	\item Perhaps a ratio of suppliers to consumers would be good to examine (aka more than one supplier in a market)
+	\item There needs to be no differentiation between the goods supplied by different suppliers. As soon as consumers can tell a difference, they are treated as separate things $X_1$ and $X_2$
+	\item Suppliers dynamics are always trying to match consumer purchasing, but consumers do their own thing... but \textcolor{red}{is there any consumer dynamic that tries to match the supplier's supply?}
+	\item We want to add stochasticity to the supply and demand story, aka a $B_t$ term
+	\item Is it reasonable to combine both uncertainties into one term? When wouldn't it be, it it was dependent $B_t$? 
+	\item Moving into a dynamical systems framework means that we are working in supply/time and consumption/time, so would this be memoryless?
+\end{itemize}
 
 
 

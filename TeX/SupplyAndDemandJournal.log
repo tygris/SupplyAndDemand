@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7400 64-bit) (preloaded format=pdflatex 2020.4.26)  18 MAY 2020 14:01
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7400 64-bit) (preloaded format=pdflatex 2020.4.26)  17 JUN 2020 17:48
 entering extended mode
 **./SupplyAndDemandJournal.tex
 (SupplyAndDemandJournal.tex
@@ -702,17 +702,33 @@ Overfull \hbox (69.7494pt too wide) in paragraph at lines 26--28
 based on read-ing Mur-ray $[]$
  []
 
-[6] [7]) [8] (SupplyAndDemandJournal.aux)
+[6] [7]
+LaTeX Font Info:    Trying to load font information for U+eus on input line 113
+.
+ ("C:\Program Files\MikTeX\tex/latex/amsfonts\ueus.fd"
+File: ueus.fd 2013/01/14 v3.01 Euler Script
+)
+LaTeX Font Info:    Trying to load font information for U+dsrom on input line 1
+13.
+
+("C:\Program Files\MikTeX\tex/latex/doublestroke\udsrom.fd"
+File: Udsrom.fd 1995/08/01 v0.1 Double stroke roman font definitions
+) [8]
+Underfull \hbox (badness 10000) in paragraph at lines 117--119
+
+ []
+
+[9]) [10] (SupplyAndDemandJournal.aux)
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 16568 strings out of 480896
- 308607 string characters out of 2910138
+ 16594 strings out of 480896
+ 309079 string characters out of 2910138
  545195 words of memory out of 3000000
- 32120 multiletter control sequences out of 15000+200000
- 537518 words of font info for 45 fonts, out of 3000000 for 9000
+ 32135 multiletter control sequences out of 15000+200000
+ 538406 words of font info for 51 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  63i,9n,62p,845b,299s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\HopesAndDreams\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/e
@@ -722,14 +738,16 @@ bx10.pfb><C:/Program Files/MikTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:
 es/MikTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MikTeX/fo
 nts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Program Files/MikTeX/fonts/type1/pub
 lic/amsfonts/cm/cmmi7.pfb><C:/Program Files/MikTeX/fonts/type1/public/amsfonts/
-cm/cmr10.pfb><C:/Program Files/MikTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><
-C:/Program Files/MikTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program F
-iles/MikTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files/MikTeX/f
-onts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files/MikTeX/fonts/type1/p
-ublic/amsfonts/cm/cmtt10.pfb>
-Output written on SupplyAndDemandJournal.pdf (8 pages, 2083582 bytes).
+cm/cmr10.pfb><C:/Program Files/MikTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><
+C:/Program Files/MikTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Fil
+es/MikTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MikTeX/fo
+nts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files/MikTeX/fonts/type1/pub
+lic/amsfonts/cm/cmti10.pfb><C:/Program Files/MikTeX/fonts/type1/public/amsfonts
+/cm/cmtt10.pfb><C:/Program Files/MikTeX/fonts/type1/public/doublestroke/dsrom10
+.pfb><C:/Program Files/MikTeX/fonts/type1/public/amsfonts/euler/eusm10.pfb>
+Output written on SupplyAndDemandJournal.pdf (10 pages, 2106427 bytes).
 PDF statistics:
- 95 PDF objects out of 1000 (max. 8388607)
+ 113 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  23 words of extra memory for PDF output out of 10000 (max. 10000000)
 
