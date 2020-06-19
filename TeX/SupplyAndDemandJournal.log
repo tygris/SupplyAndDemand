@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7400 64-bit) (preloaded format=pdflatex 2020.4.26)  17 JUN 2020 17:48
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7400 64-bit) (preloaded format=pdflatex 2020.4.26)  19 JUN 2020 12:23
 entering extended mode
 **./SupplyAndDemandJournal.tex
 (SupplyAndDemandJournal.tex
@@ -696,13 +696,13 @@ Package pdftex.def Info: Figures/SnD.png  used on input line 56.
 LaTeX Warning: Reference `predict_demand' on page 4 undefined on input line 139
 .
 
-[4] [5] (AdvisorMeetings.tex
+[4] [5] (AdvisorMeetings.tex [6]
 Overfull \hbox (69.7494pt too wide) in paragraph at lines 26--28
 \OT1/cmr/m/n/10 I pre-sented, Mur-ray[]Economics[]Style.pdf, the slides I made 
 based on read-ing Mur-ray $[]$
  []
 
-[6] [7]
+[7] [8]
 LaTeX Font Info:    Trying to load font information for U+eus on input line 113
 .
  ("C:\Program Files\MikTeX\tex/latex/amsfonts\ueus.fd"
@@ -713,12 +713,12 @@ LaTeX Font Info:    Trying to load font information for U+dsrom on input line 1
 
 ("C:\Program Files\MikTeX\tex/latex/doublestroke\udsrom.fd"
 File: Udsrom.fd 1995/08/01 v0.1 Double stroke roman font definitions
-) [8]
+)
 Underfull \hbox (badness 10000) in paragraph at lines 117--119
 
  []
 
-[9]) [10] (SupplyAndDemandJournal.aux)
+[9] [10]) [11] (SupplyAndDemandJournal.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -730,7 +730,7 @@ Here is how much of TeX's memory you used:
  32135 multiletter control sequences out of 15000+200000
  538406 words of font info for 51 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 63i,9n,62p,845b,299s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 63i,9n,62p,845b,323s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\HopesAndDreams\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/e
 c/dpi600\tcrm1000.pk><C:/Program Files/MikTeX/fonts/type1/public/amsfonts/cm/cm
 bx10.pfb><C:/Program Files/MikTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:
@@ -745,9 +745,9 @@ nts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files/MikTeX/fonts/type1/pub
 lic/amsfonts/cm/cmti10.pfb><C:/Program Files/MikTeX/fonts/type1/public/amsfonts
 /cm/cmtt10.pfb><C:/Program Files/MikTeX/fonts/type1/public/doublestroke/dsrom10
 .pfb><C:/Program Files/MikTeX/fonts/type1/public/amsfonts/euler/eusm10.pfb>
-Output written on SupplyAndDemandJournal.pdf (10 pages, 2106427 bytes).
+Output written on SupplyAndDemandJournal.pdf (11 pages, 2110324 bytes).
 PDF statistics:
- 113 PDF objects out of 1000 (max. 8388607)
+ 116 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  23 words of extra memory for PDF output out of 10000 (max. 10000000)
 
